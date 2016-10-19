@@ -1,0 +1,101 @@
+body, html{
+	margin:0;
+}
+body *{
+	box-sizing:border-box;
+}
+
+
+/* -------------------------- Seitenleiste / Menü -------------------------- */
+aside{
+	background-color:#302D2D;
+	position:fixed;
+	float:left;
+	height: 100%;
+	width:150px;
+	left:0px;
+	top:0px;
+}
+
+menu{
+	position:static;
+	float:left;
+	width:150px;
+	margin:0px;
+	padding:0px;
+	margin-right: 0px;
+
+
+}
+
+menu li a{
+	text-decoration: none;
+	width:100%;
+	padding:10px;
+	display:block;
+	color: #888888;
+
+}
+
+menu li a:hover{
+	background: #545050;
+}
+
+manu li a:active{
+	background:#6D6A6A;
+}
+
+menu li a.active {
+    background: #262424;
+}
+
+menu h2{
+	    background: #141313;
+    	color: rgb(255,255,255);
+    	margin:0px;
+    	padding:10px;
+    	height:50px;
+    	font-size: 24px;
+
+}
+/* -------------------------- Rechte Seite / Tabelle -------------------------- */
+header{
+	padding-left:170px;
+	width:100%;
+	margin-right: 0px;
+	padding-right: 20px;
+	height:50px;
+	text-align: right;
+	background: #444343;
+	float:right;
+}
+
+header h1{
+	color:#FFF;
+	margin-top:0px;
+	font-size: 24px;
+	line-height: 50px;
+}
+
+/* main */
+
+
+main{
+	float:right;
+	left:150px;
+	top:50px;
+	position:absolute;
+	width:auto;
+}
+
+/* Tabellen */
+
+table{
+	text-align: :left;
+	border: 1px solid #EEECEC;
+	width:100%;
+}
+table thead {
+    background: #2EA2CC;
+    color: rgb(255,255,255);
+}
