@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-	<meta name="author" content="Mark Beckmann">
+	<meta name="Author" content="Mark Beckmann">
 	<meta name="CNC Interface" content="later">
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="./design/index.css">
@@ -17,7 +17,7 @@
 	<aside>
 		<menu>
 			<h2>Menü</h2>
-				<li><a href="#status" accesskey="s">Status</a></li>
+				<li><a href="#status" class="active"accesskey="s">Status</a></li>
 				<li><a href="#tasks" accesskey="t">Tasks</a></li>
 		</menu>
 	</aside>
@@ -32,19 +32,49 @@
 							<th class="ip">IP</th>
 							<th class="task">Task</th>
 							<th class="workload">Workload</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td colspan="4">No Bots active yet</td>
-						</tr>
 					</tbody>
 				</table>
 			</section>
 			<section id="tasks">
-				whatever tasks here
+				<table id="tasks-overview">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Type</th>
+							<th>Input</th>
+							<th>Output</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td colspan="4">No BOTS active yet </td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="button" name="Aktualisieren" value="Aktualisieren" id="refresh" onclick="fetchContent('Tasks');">
+				<form id="form">
+					<strong>Neuen Task anlegen </strong><br>
+
+					<label for="Type">Type</label>
+					<select id="type" name="type">
+						<option>hash-md5</option>
+						<option>hash-sha256</option>
+						<option>crack-md5</option>
+					</select><br>
+
+					<label for="datainput">Data</label>
+					<input id="datainput" type="text" name="datainput"><br>
+                    
+                    <label for="data"></label>
+                    <input type="submit" value="senden">
 			</section>
 
 		</main>
+		<script src="./js/script.js" charset="UTF-8"></script>
+
 </body>
 </html>

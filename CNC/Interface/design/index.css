@@ -41,7 +41,7 @@ menu li a:hover{
 	background: #545050;
 }
 
-manu li a:active{
+menu li a:active{
 	background:#6D6A6A;
 }
 
@@ -81,11 +81,31 @@ header h1{
 
 
 main{
-	float:right;
-	left:150px;
-	top:50px;
-	position:absolute;
-	width:auto;
+   clear: right;
+    float: right;
+    height: auto;
+    overflow: hidden;
+    left: 150px;
+    top: 50px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: auto;
+}
+
+main > section{
+	position: absolute;
+	width:100%;
+	height:100%;
+	padding:20px;
+	top:100%;
+	background-color: #FFF;
+	z-index: 5;
+}
+
+main > section.active{
+	top:0px;
+	z-index:6;
 }
 
 /* Tabellen */
@@ -98,4 +118,35 @@ table{
 table thead {
     background: #2EA2CC;
     color: rgb(255,255,255);
+}
+
+table th{
+	padding: 3px 5px;
+    border-right: 1px solid #EECEC;
+}
+table td{
+	border-right: 1px solid #EEECEC;
+	padding: 3px 5px;
+	overflow: hidden;
+}
+table tr {
+	width: 100%;
+}
+
+table tbody tr:hover{
+	background:#B8DBBA;
+}
+
+
+
+/*-------------------Buttons-------------------------*/
+
+
+#status-overview input.start, #status-overview input.stop {
+    background: #A3B745;
+}
+
+#status-overview input.stop {
+    background: #EA5340;
+    margin-right: 0px;
 }
