@@ -24,8 +24,11 @@ menu{
 	margin:0px;
 	padding:0px;
 	margin-right: 0px;
+}
 
-
+menu li {
+	list-style-type: circle;
+	color: #888888;
 }
 
 menu li a{
@@ -34,7 +37,9 @@ menu li a{
 	padding:10px;
 	display:block;
 	color: #888888;
-
+	font-family: Calibri, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 menu li a:hover{
@@ -54,9 +59,11 @@ menu h2{
     	color: rgb(255,255,255);
     	margin:0px;
     	padding:10px;
+		padding-right: 20px;
     	height:50px;
-    	font-size: 24px;
-
+    	font-size: 26px;
+		font-family: Calibri, sans-serif;
+		text-align: center;
 }
 /* -------------------------- Rechte Seite / Tabelle -------------------------- */
 header{
@@ -68,12 +75,13 @@ header{
 	text-align: right;
 	background: #444343;
 	float:right;
+	font-family: Calibri, sans-serif;
 }
 
 header h1{
 	color:#FFF;
 	margin-top:0px;
-	font-size: 24px;
+	font-size: 26px;
 	line-height: 50px;
 }
 
@@ -100,7 +108,7 @@ main > section{
 	padding:20px;
 	top:100%;
 	overflow:auto;
-	background-color: #FFF;
+	background-color: #EEECEC;
 	z-index: 5;
 }
 
@@ -116,16 +124,19 @@ table{
 	border: 1px solid #EEECEC;
 	border-collapse: :collapse;
 	width:100%;
+	background-color: #FFF;
 }
 table thead {
     background: #2EA2CC;
     color: rgb(255,255,255);
+	font-family: Calibri, sans-serif;
 }
 
 table th{
 	padding: 3px 5px;
     border-right: 1px solid #EEECEC;
-    cursor:pointer;
+    cursor: pointer;
+	font-size: 18px;
 }
 table td{
 	border-right: 1px solid #EEECEC;
