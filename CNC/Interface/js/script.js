@@ -1,6 +1,7 @@
 var botnet = "../../../Botnet-API/api/";
 botnet = "http://botnet.artificial.engineering/api/";
-var mytoken = "my-token-123";
+var mytoken = "9c5ddd54107734f7d18335a5245c286b";
+
 
 //-----------------------------Sidebar----------------------------------------
 
@@ -29,8 +30,7 @@ var initialiseSidebar = function(){
 }
 
 
-function showSection(id)
-{
+function showSection(id){
     var sections = document.querySelectorAll("main > section");
     for (i = 0; i < sections.length; i++)
     {
@@ -51,7 +51,6 @@ var fetchContent = function(type){
 }).then(function(json){
 	if(type=="Status"){
 		insertStatusContent(json);
-		console.log(json);
 	}else if(type =="Tasks"){
 		insertTaskContent(json);
 	}else{
@@ -76,13 +75,10 @@ var insertTaskContent= function (data){
 		text += "</tr>";
 	}
 	tableTaskData.innerHTML = text;
-
 }
-
 var insertStatusContent = function (data){
 	var out = "";
 	var tableStatusData = document.querySelector("#status-overview tbody");
-
 
 	for(i=0;i<data.length;i++){
 		out += "<tr>";
@@ -101,15 +97,53 @@ var insertStatusContent = function (data){
 	}
 	tableStatusData.innerHTML = out;
 }
+//-----------------------Posts------------------------------------------------
+var changeStatus = function (id, status){
+    var data = {"id": id, "status": status};
+    posts("Status", JSON.stringify(data), function() {fetchContent('Status')});
+}
+
+var sendTaskForm = function (e) {
+    var data = {"type":document.getElementById("type").value, "data":  {"input": document.getElementById("datainput").value}};
+    posts("Tasks", JSON.stringify(data), function() {fetchContent('Tasks')});
+    console.log(data);
+    e.preventDefault();
+}
 
 
+
+var posts = function(api, json, callback){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', botnet+api, true);
+    xhr.responseType = "json";
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('token', mytoken);
+
+    xhr.onload = function (e) {
+        if (this.status == 200){
+            var data = xhr.response;
+            if(data!==null&&data.message!="OK"){
+                alert("ERROR");
+            }else{
+                callback();
+            }
+        }
+
+    };
+    xhr.send(json);
+}
+
+var bindform = function(){
+    var formTasks = document.querySelector("#form");
+    formTasks.addEventListener("submit", function(e){sendTaskForm(e);});
+}
 //----------------------------------------------------------------------
 
 // (function(){
-
 	fetchContent('Status');
 	fetchContent('Tasks');
 	initialiseSidebar();
+    bindform();
 // })();
 
 

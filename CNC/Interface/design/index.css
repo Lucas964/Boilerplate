@@ -81,7 +81,7 @@ header h1{
 
 
 main{
-   clear: right;
+    clear: right;
     float: right;
     height: auto;
     overflow: hidden;
@@ -99,6 +99,7 @@ main > section{
 	height:100%;
 	padding:20px;
 	top:100%;
+	overflow:auto;
 	background-color: #FFF;
 	z-index: 5;
 }
@@ -113,6 +114,7 @@ main > section.active{
 table{
 	text-align: :left;
 	border: 1px solid #EEECEC;
+	border-collapse: :collapse;
 	width:100%;
 }
 table thead {
@@ -122,25 +124,70 @@ table thead {
 
 table th{
 	padding: 3px 5px;
-    border-right: 1px solid #EECEC;
+    border-right: 1px solid #EEECEC;
+    cursor:pointer;
 }
 table td{
 	border-right: 1px solid #EEECEC;
 	padding: 3px 5px;
 	overflow: hidden;
+	max-width:300px;
+}
+table tbody{
+	width:100%;
+	max-height:320px;
+	overflow:hidden;
 }
 table tr {
 	width: 100%;
 }
 
+
+
 table tbody tr:hover{
 	background:#B8DBBA;
 }
 
+/* Tasks */
+#form{
+	border:1px solid #EEECEC;
+	margin:20px 0px;
+	padding:10px;
+}
 
+input, select {
+	margin: 10px 0px;
+}
+
+label{
+    width: 150px;
+    display: inline-block;
+}
+
+input[type=text], select{
+    border-radius: 3px;
+    border: 1px solid #EEECEC;
+    min-width: 150px;
+}
+
+#refresh{
+	width: 100%;
+	margin-top:20px;
+	height:40px;
+}
 
 /*-------------------Buttons-------------------------*/
 
+input[type=button], input[type=submit]{
+    border: 0px;
+    border-radius: 3px;
+    height: 25px;
+    cursor: pointer;
+    background: #2EA2CC;
+    color: #FFF;
+    font-weight: bold;
+    margin: 2px;
+}
 
 #status-overview input.start, #status-overview input.stop {
     background: #A3B745;
