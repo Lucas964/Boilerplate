@@ -71,7 +71,7 @@ var insertTaskContent= function (data){
 		text += "<td>" + row.id + "</td>";
 		text += "<td>" + row.type + "</td>";
 		text += "<td>" + row.data.input + "</td>";
-		text += "<td>" + row.data.input + "</td>";
+		text += "<td>" + row.data.output + "</td>";
 		text += "</tr>";
 	}
 	tableTaskData.innerHTML = text;
