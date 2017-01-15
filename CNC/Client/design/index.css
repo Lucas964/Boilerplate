@@ -1,0 +1,213 @@
+body, html{
+	margin:0;
+}
+body *{
+	box-sizing:border-box;
+}
+
+
+/* -------------------------- Seitenleiste / Menü -------------------------- */
+aside{
+	background-color:#302D2D;
+	position:fixed;
+	float:left;
+	height: 100%;
+	width:150px;
+	left:0px;
+	top:0px;
+}
+
+menu{
+	position:static;
+	float:left;
+	width:150px;
+	margin:0px;
+	padding:0px;
+	margin-right: 0px;
+}
+
+menu li {
+	border-bottom: 1px solid #888888;
+	cursor: pointer;
+	list-style-type: none;
+	color: #888888;
+}
+
+menu li a{
+	text-decoration: none;
+	text-align: center;
+	width:100%;
+	padding:10px;
+	display:block;
+	color: #888888;
+	font-family: Calibri, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+menu li a:hover{
+	background: #545050;
+}
+
+menu li a:active{
+	background:#6D6A6A;
+}
+
+menu li a.active {
+    background: #262424;
+}
+
+menu h2{
+	    background: #141313;
+    	color: rgb(255,255,255);
+    	margin:0px;
+    	padding:10px;
+		padding-right: 20px;
+    	height:50px;
+    	font-size: 26px;
+		font-family: Calibri, sans-serif;
+		text-align: center;
+}
+/* -------------------------- Rechte Seite / Tabelle -------------------------- */
+header{
+	padding-left:170px;
+	width:100%;
+	margin-right: 0px;
+	padding-right: 20px;
+	height:50px;
+	text-align: right;
+	background: #444343;
+	float:right;
+	font-family: Calibri, sans-serif;
+}
+
+header h1{
+	color:#FFF;
+	margin-top:0px;
+	font-size: 26px;
+	line-height: 50px;
+}
+
+/* main */
+
+
+main{
+    clear: right;
+    float: right;
+    height: auto;
+    overflow: hidden;
+    left: 150px;
+    top: 50px;
+    right: 0px;
+    bottom: 0px;
+    position: absolute;
+    width: auto;
+}
+
+main > section{
+	position: absolute;
+	width:100%;
+	height:100%;
+	padding:20px;
+	top:100%;
+	overflow:auto;
+	background-color: #EEECEC;
+	z-index: 5;
+}
+
+main > section.active{
+	top:0px;
+	z-index:6;
+}
+
+/* Tabellen */
+
+table{
+	text-align: :left;
+	border: 1px solid #EEECEC;
+	border-collapse: :collapse;
+	width:100%;
+	background-color: #FFF;
+}
+table thead {
+    background: #2EA2CC;
+    color: rgb(255,255,255);
+	font-family: Calibri, sans-serif;
+}
+
+table th{
+	padding: 3px 5px;
+    border-right: 1px solid #EEECEC;
+    cursor: pointer;
+	font-size: 18px;
+}
+table td{
+	border-right: 1px solid #EEECEC;
+	padding: 3px 5px;
+	overflow: hidden;
+	max-width:300px;
+}
+table tbody{
+	width:100%;
+	max-height:320px;
+	overflow:hidden;
+}
+table tr {
+	width: 100%;
+}
+
+
+
+table tbody tr:hover{
+	background:#B8DBBA;
+}
+
+/* Tasks */
+#form{
+	border:1px solid #EEECEC;
+	margin:20px 0px;
+	padding:10px;
+}
+
+input, select {
+	margin: 10px 0px;
+}
+
+label{
+    width: 150px;
+    display: inline-block;
+}
+
+input[type=text], select{
+    border-radius: 3px;
+    border: 1px solid #EEECEC;
+    min-width: 150px;
+}
+
+#refresh{
+	width: 100%;
+	margin-top:20px;
+	height:40px;
+}
+
+/*-------------------Buttons-------------------------*/
+
+input[type=button], input[type=submit]{
+    border: 0px;
+    border-radius: 3px;
+    height: 25px;
+    cursor: pointer;
+    background: #2EA2CC;
+    color: #FFF;
+    font-weight: bold;
+    margin: 2px;
+}
+
+#status-overview input.start, #status-overview input.stop {
+    background: #A3B745;
+}
+
+#status-overview input.stop {
+    background: #EA5340;
+    margin-right: 0px;
+}
